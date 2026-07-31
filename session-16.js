@@ -203,5 +203,5 @@ let user = {
 
 for(let key in user){
     console.log(user[key]);
-    
 }
+
