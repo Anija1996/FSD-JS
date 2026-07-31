@@ -201,7 +201,7 @@ let user = {
 // console.log(entries);
 
 
-for(let key in user){
-    console.log(user[key]);
-}
+// for(let key in user){
+//     console.log(user[key]);
+// }
 
