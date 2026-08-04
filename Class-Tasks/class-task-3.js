@@ -1,58 +1,47 @@
-cart= [
-    {id : 1, name : "Pizza", price : 300, quantity : 2},
-    {id : 2, name : "Burger", price : 150, quantity : 1}
+const cart = [
+    {id:1 , name:"Pizza", price:300, quantity:2},
+    {id:2, name:"Burger",price:150, quantity:1}
 ];
 
-customer = {
-    name : "Karthik",
-    city : "Kochi",
-    membership : "Silver"
+const customer = {
+    name:"Karthik",
+    city:"Kochi",
+    membership:"Silver"
 };
 
 //Array Spread
-updatedCart = [...cart , {id : 3, name : "Pasta", price : 200}];
-// console.log(updatedCart);
+const updatedCart = [...cart,{id:3, name:"noodles" , price:300}];
 
 //Object Spread
-premiumCustomer = {
-    ...customer,
-    membership : "Gold",
-    coupon : "FOOD50"
-};
-// console.log(premiumCustomer);
+const premiumCustomer = {...customer,membership:"Gold",coupon:"FOOD50"};
 
 //Object Destructuring
 const {
     name,
     city
-} = customer;
-// console.log(name, city);
+}=customer;
 
 //Array Destructuring
-const [firstItem, secondItem]=updatedCart;
-// console.log(name);
-// console.log(firstItem.name);
+const [firstItem,secondItem,thirdItem]=updatedCart;
 
-function calculateItemTotal(price, quantity=1){
-    return price * quantity;
-}
-const total1 = calculateItemTotal(firstItem.price, firstItem.quantity);
-const total2 = calculateItemTotal(secondItem.price)
-// console.log(total1 +"\n"+ total2);
+console.log("Name of the customer : ",name);
+console.log("First food item : ",firstItem.name);
 
-//processCart Function
-const processCart = (cartItems, discountFn, callback) => {
-    const totalAmount = cartItems.reduce((sum, {price, quantity=1}) => sum + price * quantity, 0);
-    // discountFn = FestivalDiscount(totalAmount);
-    const finalAmount = discountFn(totalAmount);
-    callback(finalAmount, customer.name);
+const calculateItemTotal = (price,quantity=1) => price*quantity;
+calculateItemTotal(firstItem.price,firstItem.quantity);
+calculateItemTotal(thirdItem.price);
+
+const noDiscount = (total) =>total;
+const festivalDiscount = (total) => total-total*0.1;
+
+const printBill=(name,finalAmount)=>{
+    console.log(`\n${name} have to pay Rs.${finalAmount}\n`);   
 }
 
-const noReturns = (total) => total;
-const FestivalDiscount =  (total) => total -total * 0.1;
-
-const finalBill = (total, name) => {
-    console.log(`Order Confimed for ${name}. \nPay Rs.${total}`);
+const processCart = (cartItems,discountFn,callback) =>{
+    const totalPrice = cartItems.reduce((sum,{price,quantity=1})=>sum+price*quantity,0);
+    const finalAmount = discountFn(totalPrice);
+    callback(name,finalAmount);
 }
+processCart(updatedCart,festivalDiscount,printBill);
 
-processCart(updatedCart, FestivalDiscount, finalBill);
