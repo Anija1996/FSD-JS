@@ -10,7 +10,7 @@ const order = {
 const deliveryCharge = (distance) => {
     return distance > 7 ? 70 : 50;
 }
-// console.log(deliveryCharge);
+
 
 
 const applyDiscount = (price,discount=0) => price - price * discount;
