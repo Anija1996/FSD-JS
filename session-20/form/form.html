@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  
+</head>
+<body class="d-flex justify-content-center align-items-center">
+    
+    <form id="loginForm">
+    <h2 class="text-center text-primary">Create Account</h2>
+    <div class="border shadow d-block justify-content-center align-items-center px-5 py-4">
+    <label for="username">Username  </label><br>
+    <input type="text" id="username" class="form-control">
+    <p id="username-error" class="small text-danger invalid-feedback"></p>
+
+    <label for="email">Email ID </label><br>
+    <input type="text" id="email" class="form-control">
+    <p id="email-error" class="small text-danger invalid-feedback"></p>
+
+    <label for="password">Password  </label><br>
+    <input type="password" id="pswd" class="form-control">
+    <p id="pswd-error" class="small text-danger invalid-feedback"></p>
+
+    <label for="confirm-password">Confirm Password  </label><br>
+    <input type="password" id="conf" class="form-control">
+    <p id="conf-error" class="small text-danger invalid-feedback"></p>
+
+    <div class="d-flex justify-content-center align-items-center">
+    <button type="submit" id="btn">Create Account</button>
+    <p id="last" class="small text-danger"></p></div>
+    </div>
+</form>
+
+
+<!-- JavaScript -->
+<script src="form.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
