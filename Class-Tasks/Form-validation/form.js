@@ -192,7 +192,7 @@ form.addEventListener('submit',(e)=>{
 
    if (res === true) {
         final.innerHTML = "<i class='bi bi-check-circle-fill text-success me-1'></i> 🎉 Account created successfully 🎉";
-        final.className = "border border-success rounded text-success p-2 mt-3 text-center fw-bold";
+        final.className = "border border-success alert-success rounded text-success p-2 mt-3 text-center fw-bold";
     }
     else{
         final.textContent="Please enter the correct details";
