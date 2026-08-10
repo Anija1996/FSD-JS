@@ -9,6 +9,7 @@ const order = {
 
 const deliveryCharge = (distance) => {
     return distance > 7 ? 70 : 50;
+    
 }
 
 
