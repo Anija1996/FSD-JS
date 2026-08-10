@@ -1,0 +1,36 @@
+.red{
+    color:red;
+}
+.big{
+    font-size: 40px;
+}
+.center{
+    text-align: center;
+}
+
+/* .red{
+    color:red;
+} */
+
+/* .big{
+    font-size: 40px;
+}  */
+
+.highlight{
+    background: yellow;
+}
+
+.round{
+    border-radius: 20px;
+}
+/* 
+.border{
+    border: 5px solid blue;
+} */
+
+/* .cardStyle{
+
+    background: lightblue;
+    padding: 20px;
+    border-radius: 10px;
+} */
