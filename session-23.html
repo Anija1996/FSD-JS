@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="addName">Add Name</button>
+    <script>
+        // const addName = document.querySelector("#addName");
+        // const userName = sessionStorage.getItem("name") || undefined;
+        // addName.addEventListener('click',(e)=>{
+        //     sessionStorage.setItem("name","Anija")
+        // });
+
+        //Local Storage - data stored permanently until user delete it.
+        // localStorage.setItem("name","ANIJA");
+        // const userName = localStorage.getItem("name");
+        // localStorage.removeItem("name");
+        // localStorage.clear();
+        // console.log("local storage username :",userName);
+        
+        //Session storage - data stored temporarly, loss data until user close the webpage.
+        // sessionStorage.setItem("name","Anija");
+        // const userName = sessionStorage.getItem("name");
+        // console.log("session storage username : ",userName);
+
+        // const userDetails = {
+        //     id:1,
+        //     name:"Anija"
+        // };
+        // localStorage.setItem("userObj",JSON.stringify(userDetails));
+        // localStorage.setItem("name","Anija");
+        // const userName = localStorage.getItem("name");
+        // const userDetailsObj = JSON.parse(localStorage.getItem("userObj"));
+        // localStorage.removeItem("name");
+        // localStorage.clear{};
+        // console.log("username from local storage:",userName);
+        
+
+       
+        // student.showName();
+        
+
+        // const stdFn = student.showName.bind(student);
+        // stdFn();
+
+        // function greet(city){
+        //     console.log(`Hi, I'm ${this.name} form ${city}`);
+            
+        // }
+        // const user = {
+        //     name:"Anija"
+        // };
+        // greet.call(user,"TVM");
+        // greet.apply(user,["TVM"]);
+
+
+
+
+        const productPrototype = {
+            getLabel(){
+                return `${this.name}-${this.price}`;
+            }
+        };
+        const phone = Object.create(productPrototype);
+        phone.id=1;
+        phone.name-"Samsung Galaxy M11";
+        phone.price=20000;
+
+
+        const watch=Object.create(productPrototype);
+        watch.id=2;
+        watch.name="Smart watch";
+        watch.price=5000;
+
+        console.log("Product Prototype : ", phone.getLabel());
+        console.log("Name property check : ", phone.hasOwnProperty("name"));
+
+        const cartManager={
+            cart:JSON.parse(localStorage.getItem("shoppingCart")|| "||"),
+            addItem(product){
+                if(this.cart.some(item => item.id ===product.id)){
+                    console.log(`${product.name} already exists`);
+                    return;
+                }
+                    
+                this.cart.push({
+                    id:product.id,
+                    name:product.name,
+                    price: product.price
+                });
+                localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+                console.log(`Added:${product.name}`);
+                
+            },
+            getTotal(){
+                return this.cart.reduce((sum,item)=>sum+item.price,0);
+            },
+            showCart(){
+                console.log("Cart Items : ");
+                this.cart.forEach(item => {
+                   console.log(`-${item.name} : ${item.price}`);
+                    
+                });
+                console.log(`Total : ${this.getTotal()}`);
+                
+                
+            }
+        }
+
+        cartManager.addItem(phone);
+        cartManager.addItem(watch);
+        cartManager.showCart();
+    </script>
+</body>
+</html>
